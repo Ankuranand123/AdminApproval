@@ -1,0 +1,24 @@
+﻿@model AdminApproval.Models.AdminLogin;
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "AdminLogin";
+}
+    <a asp-controller="home"
+       asp-action="Logout">Log out</a>
+
+<p>welcome @HttpContextAccessor.HttpContext.Session.GetString("sessionkey")</p>
+
+
+<h1>AdminLogin</h1>
+
+@foreach (var user in Model.listOfUnApprovedUsers)
+{
+    <form asp-controller="home" asp-action="AdminLogin" method="post" asp-route-uid="@user.id">
+        <h5>@user.username</h5>
+        <label asp-for="status"></label><input type="radio" asp-for="status" value="1" />YES<br />
+        <input type="radio" asp-for="status" value="0" />No <br />
+
+        <button type="submit">Submit</button>
+    </form>
+}

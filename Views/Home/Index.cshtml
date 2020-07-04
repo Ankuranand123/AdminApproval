@@ -1,0 +1,32 @@
+﻿@model AdminApproval.Models.userSignup;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-controller="home" asp-action="Index" method="post">
+
+    <label asp-for="@Model.username"></label>
+    <input asp-for="@Model.username">
+    <br />
+
+    <label asp-for="@Model.email"></label>
+    <input asp-for="@Model.email">
+    <br />
+
+    <label asp-for="@Model.city"></label>
+    <input asp-for="@Model.city">
+    <br />
+
+    <label asp-for="@Model.password"></label>
+    <input asp-for="@Model.password">
+    <br />
+
+    <button type="submit">Create</button>
+</form>
+

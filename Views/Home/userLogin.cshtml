@@ -1,0 +1,28 @@
+﻿@model AdminApproval.Models.userSignup;
+@{
+    ViewData["Title"] = "userLogin";
+    string str = ViewBag.message;
+
+    if (!String.IsNullOrEmpty(str))
+    {
+        <p>@str</p>
+    }
+}
+
+<h1>userLogin</h1>
+
+
+<form asp-controller="home" asp-action="userLogin" method="post">
+
+    <label asp-for="@Model.username"></label>
+    <input asp-for="@Model.username">
+    <br />
+
+    
+
+    <label asp-for="@Model.password"></label>
+    <input asp-for="@Model.password">
+    <br />
+
+    <button type="submit">Login</button>
+</form>

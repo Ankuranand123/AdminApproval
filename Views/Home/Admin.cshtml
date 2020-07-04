@@ -1,0 +1,28 @@
+﻿@model AdminApproval.Models.Admin;
+@{
+    ViewData["Title"] = "Admin";
+    string str =  ViewBag.message;
+
+    if(!String.IsNullOrEmpty(str))
+    {
+        <h4> not a valid user</h4>
+    }
+}
+
+<h1>Admin Login page</h1>
+
+<form asp-controller="home" asp-action="Admin" method="post">
+
+   
+
+    <label asp-for="@Model.email"></label>
+    <input asp-for="@Model.email">
+
+    
+
+    <label asp-for="@Model.password"></label>
+    <input asp-for="@Model.password">
+
+    <button type="submit">Login</button>
+</form>
+
